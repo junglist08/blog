@@ -1,0 +1,16 @@
+<%= @post.title %>
+<%= @post.description %>
+<%= @post.seo_name %>
+<%= @post.post_body %>
+
+<% if @post.user.id == current_user.id %>
+	<%= link_to 'Update Malware', edit_post_path(@post) %>
+
+<% end %>
+
+<br>
+
+<% if @post.user.id == current_user.id %>
+	<%= link_to 'Delete Malware', post_path(@post), method: :delete %>
+	
+<% end %>
